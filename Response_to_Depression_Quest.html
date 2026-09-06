@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Response to Depression Quest</title>
+        <link rel="stylesheet" href="style.css">
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+
+                const sections = document.querySelectorAll("section[id]");
+                const progressLinks = document.querySelectorAll(".progress a");
+
+                const observer = new IntersectionObserver(
+                    entries => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                progressLinks.forEach(link => {
+                                    link.classList.remove("active");
+
+                                    if (link.getAttribute("href") === "#" + entry.target.id) {
+                                        link.classList.add("active");
+                                    }
+                                });
+                            }
+                        });
+                    },
+                    {
+                        threshold: 0.5
+                    }
+                );
+
+                sections.forEach(section => observer.observe(section));
+
+            });
+        </script>
+    </head>
+    <body>
+
+        <nav class="progress">
+
+            <!-- <a href="#introduction">
+                <span class="dot"></span>
+                <span class="label">Introduction</span> 
+            </a> -->
+
+            <a href="#scene-1">
+                <span class="dot"></span>
+                <span class="label">Morning</span>
+            </a>
+
+            <a href="#scene-2">
+                <span class="dot"></span>
+                <span class="label">Day</span>
+            </a>
+
+            <a href="#scene-3">
+                <span class="dot"></span>
+                <span class="label">Ending</span>
+            </a>
+
+            <a href="#analysis">
+                <span class="dot"></span>
+                <span class="label">Analysis</span>
+            </a>
+
+            <a href="#conclusion">
+                <span class="dot"></span>
+                <span class="label">Conclusion</span>
+            </a>
+
+            <a href="#introduction" class="top-button">↩ Start Over</a>
+            
+        </nav>
+
+        <main>
+            <section id="introduction">
+                <h1>You Have a Choice...</h1>
+                <small>But not every choice is available. An interactive response to Depression Quest</small>
+                <p>Depression Quest is an interactive fiction game that explores the experience of living with depression. This response examines the game's portrayal of mental health and the choices players face within its narrative.</p>
+                <a href="#scene-1" class="start-button">Begin</a>
+            </section>
+            <section class="scene"id="scene-1">
+                <!-- Scene 1: The Morning-->
+                <h1>Scene 1: The Morning</h1>
+                <div class="scene-header">
+                    <span>01</span>
+                    <span>8:24 AM</span>
+                </div>
+                <div class="scene-content">
+                    <p>You wake up to the sound of your alarm after being snoozed for the third time. The day ahead feels overwhelming, and you struggle to find the motivation to get out of bed. You have class in 20 minutes</p>
+                    <p>What do you do?</p>
+                    <nav class="choices">
+                        <a href="#scene-2">Get out of bed and start your day</a> 
+                        <a href="#scene-2">Stay in bed and try to sleep more</a> 
+                        <span class="unavailable">Ignore the alarm and stay in bed</span> 
+                        <a href="#scene-2">Text your friend who is in the same class</a>
+                    </nav>
+                </div>
+            </section>
+            <section class="scene" id="scene-2">
+                <!-- Scene 2: The Day-->
+                <h1>Scene 2: The Day</h1>
+                <div class="scene-header">
+                    <span>02</span>
+                    <span>12:00 PM</span>
+                </div>
+                <div class="scene-content">
+                    <p>Class just got over. Your friend asks if you want to get lunch, but you're not really up for it. You're mentally drained and aren't interested in socializing.</p>
+                    <p>What do you do?</p>
+                    <nav class="choices">
+                        <span class="unavailable">You haven't hung out with your friend in a while. Say yes excitedly</span> 
+                        <a href="#scene-3">Say you're not hungry, and have a ton of homework</a> 
+                        <a href="#scene-3">Begrudgingly say yes, after seeing their face fall from you hesitating.</a> 
+                        <span class="unavailable">Go home</span>
+                    </nav>
+                </div>
+            </section>
+            <section class="scene" id="scene-3">
+                <!-- Scene 3: The Ending-->
+                <h1>Scene 3: The Ending</h1>
+                <div class="scene-header">
+                    <span>03</span>
+                    <span>6:00 PM</span>
+                </div>
+                <div class="scene-content">
+                    <p>You made it through the day, but it was a struggle. You feel a sense of relief that it's over, but also a lingering sadness that you zoned out so often. You realize you want help, but you're not sure where to start. You consider reaching out to a friend or a mental health professional.</p>
+                    <p>What do you do?</p>
+                    <nav class="choices">
+                        <span class="unavailable">Reach out to your parents for support</span> 
+                        <a href="#analysis">Look up resources for getting help</a> 
+                        <span class="unavailable">Ignore your feelings and try to push through</span> 
+                        <span class="unavailable">Go to bed early</span>
+                    </nav>
+                </div>
+            </section>
+            <section class="analysis" id="analysis">
+                <!-- Analysis Section -->
+                 <div class="section-title">
+                <h1>Analysis of Depression Quest's Choices</h1>
+                <a href="#conclusion" class="next-button">Continue to Conclusion →</a>
+                </div>
+                <div class="analysis-content">
+                    <p>Depression Quest presents players with a series of choices that reflect the challenges faced by individuals living with depression. The game emphasizes the limitations and consequences of these choices, highlighting how depression can restrict one's ability to engage in everyday activities and social interactions.</p>
+                    <p>As the protagonist's depression worsens, the number of available options decreases, reflecting the progressive nature of the condition.</p>
+                    <p>The unavailability of certain options serves to illustrate the impact of depression on decision-making and motivation. By restricting access to certain choices, the game effectively conveys the sense of helplessness and frustration that can accompany mental health struggles.</p>
+                    <p>Overall, Depression Quest provides a valuable perspective on the lived experience of depression, encouraging empathy and understanding among players. It also underscores the importance of seeking support and professional help when dealing with mental health issues.</p>
+                </div>
+                <div class="why-webpage">
+                    <h2>Why a Webpage?</h2>
+                    <p>This response is presented as a webpage to allow for an interactive and immersive experience. The format enables users to navigate through the scenes and choices, mirroring the structure of Depression Quest itself. By engaging with the content in this way, users can gain a deeper understanding of the game's theme of interactive choices, and how it reflects the real-life experiences of those living with depression.</p>
+                </div>
+
+
+            </section>
+            <section class="conclusion" id="conclusion">
+                <h1>Conclusion</h1>
+                <h2>So did you really have a choice?</h2>
+                <p>You were given choices throughout this experience. Some were never available. Imagine experiencing the same limitations and consequences in real life.</p>
+            </section>
+            </main>
